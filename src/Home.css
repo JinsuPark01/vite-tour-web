@@ -1,0 +1,19 @@
+/* Home.css */
+
+.home-title {
+  font-size: 2.5rem;
+  color: #6200ea;
+  margin-bottom: 1rem;
+}
+
+.home-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.home-highlight {
+  color: red;
+  font-weight: bold;
+}
