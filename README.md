@@ -18,7 +18,7 @@ If you are developing a production application, we recommend using TypeScript wi
 - 마커 표시
 - 인포윈도우 -> 삭제
 OpenWeatherMap
--날씨 및 온도 받아와서 표시
+- 날씨 및 온도 받아와서 표시
 유튜브 검색창
 파이어베이스 연동
 리엑트 vite 사용
