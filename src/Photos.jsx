@@ -64,8 +64,18 @@ const Photos = () => {
     item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const filteredDocIds = displayList
+    .map((_, index) => docId[index])
+    .filter((_, index) =>
+      displayList[index].title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
   const totalPages = Math.ceil(filteredList.length / itemsPerPage);
   const paginatedList = filteredList.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+  const paginatedDocIds = filteredDocIds.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -114,7 +124,7 @@ const Photos = () => {
             <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem' }}>
                 {isLogined && (
                   <Link
-                  to={`/editTrip/${docId[index]}`}
+                  to={`/editTrip/${paginatedDocIds[index]}`}
                   className="editButton"
                   style={{ flex: 1, textAlign: 'center' }}
                   >

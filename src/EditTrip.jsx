@@ -21,6 +21,7 @@ function EditTrip() {
     let [comment, setComment] = useState("");
     let [photoURL, setPhotoURL] = useState("");
     let [image, setImage] = useState(null); //업로드할 파일 객체
+    let [title, setTitle] = useState("");
     useEffect(() => {
         const getData = async () => {
             //아래는 하나의 문서를 읽어들이는 구문
@@ -31,6 +32,7 @@ function EditTrip() {
             setComment(ob.comment);
             setDate1(ob.date);
             setPhotoURL(ob.photoURL);
+            setTitle(ob.title);
         };
         getData();
     }, [db, docId]); 
@@ -47,12 +49,16 @@ function EditTrip() {
         //e.preventDefault();
         setComment(e.target.value);
     };
+    const titleHandle = (e) => {
+        setTitle(e.target.value);
+    };
     const handleReset = () => {
         //초기화
         setLocation1("");
         setDate1("");
         setComment("");
         setImage(null);
+        setTitle("");
     };
     //이미지를 포함한 데이터 저장
     const storeHandle = async (e) => {
@@ -89,6 +95,7 @@ function EditTrip() {
                     //문서(document)를 update하기(덮어쓰기 함수)
                     setDoc(doc(db, "tourMemo", docId), {
                         location: location1,
+                        title,
                         date: date1,
                         comment,
                         photoURL,
@@ -97,6 +104,7 @@ function EditTrip() {
                     setDate1("");
                     setComment("");
                     setImage(null);
+                    setTitle("");
                     alert("추억 여행을 수정했습니다.");
                     navigate("/photos"); //포토 모음 전체 보기
                 });
@@ -134,6 +142,16 @@ function EditTrip() {
                         value={comment}
                         onChange={commentHandle}
                         style={{ width: '100%', padding: '0.5rem', border: '1px solid #ccc', borderRadius: '8px', fontSize: '1rem', height: '100px', resize: 'none' }}
+                    />
+                </div>
+                <div className="form-group" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
+                    <label htmlFor="title" style={{ display: 'block', fontSize: '1rem', color: '#333', marginBottom: '0.5rem' }}>제 목</label>
+                    <input
+                        type="text"
+                        id="title"
+                        value={title}
+                        onChange={titleHandle}
+                        style={{ width: '100%', padding: '0.5rem', border: '1px solid #ccc', borderRadius: '8px', fontSize: '1rem' }}
                     />
                 </div>
                 <div className="form-group" style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
