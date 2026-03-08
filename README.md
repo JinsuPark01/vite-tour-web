@@ -1,24 +1,22 @@
-# React + Vite
+## ✈️ React Travel Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 📌 Overview
+여행 기록을 작성하고 여행 위치를 지도에서 확인할 수 있는 React 기반 여행 블로그 웹 애플리케이션.  
+Firebase Firestore를 활용해 게시글과 이미지를 저장하고, 외부 API를 연동해 여행지 정보와 날씨 데이터를 제공.
 
-Currently, two official plugins are available:
+### 🛠 Tech Stack
+- React
+- Firebase Firestore
+- Kakao Maps API
+- OpenWeatherMap API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ⚙️ Key Features
+- 여행 게시글 작성 및 조회 기능
+- 여행 사진 업로드 및 게시글 저장
+- Kakao Maps API를 활용한 여행 위치 지도 시각화
+- OpenWeatherMap API를 활용한 여행지 날씨 정보 조회
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-<사용 기술>
-카카오맵 api
-- StaticMap, DynamicMap
-- 주소 > 좌표변환
-- 마커 표시
-- 인포윈도우 -> 삭제
-OpenWeatherMap
-- 날씨 및 온도 받아와서 표시
-유튜브 검색창
-파이어베이스 연동
-리엑트 vite 사용
+### 💡 Implementation Highlights
+- **Firebase Firestore** 기반 게시글 및 이미지 데이터 저장 구조 구현
+- **Kakao Maps API**를 활용한 여행 위치 지도 시각화 기능 구현
+- **OpenWeatherMap API** 연동을 통한 여행지 날씨 정보 조회 기능 구현
